@@ -178,6 +178,7 @@ archive.zip
 .vscode
 cleaned_text_files/
 notes.txt
+capstonevenv/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/python
