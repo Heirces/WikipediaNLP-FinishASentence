@@ -1,7 +1,8 @@
 import json
 import re
 import zipfile
-
+import os
+import spacy
 pattern_table = r"\{\|.*?\|\}"
 pattern_cleanup_table_leftovers = r"\|.*?\|\}"
 pattern_table_cell_cleanup = r"\|.*?\|"
@@ -52,4 +53,16 @@ def reclean_the_clean_text_files(clean_text_file):
     with open(clean_text_file, "w", encoding="utf-8") as final_file:
         final_file.write(cleaned_text)
 
-reclean_the_clean_text_files("cleaned_text_files\clean_text1.txt")
+def reclean_all_the_text_files():
+    directory = r"C:\Users\Garre\OneDrive\Desktop\WGU\Capstone\cleaned_text_files"
+    for filename in os.listdir(directory):
+        if filename != "clean_text1.txt":
+            filepath = os.path.join(directory, filename)
+            print(f"Cleaning: {filename}")
+            try:
+                reclean_the_clean_text_files(filepath)
+            except Exception as e:
+                print(f=
+                "Error processing {filename}: {e}")
+
+
