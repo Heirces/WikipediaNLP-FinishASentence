@@ -179,6 +179,7 @@ archive.zip
 cleaned_text_files/
 notes.txt
 capstonevenv/
+clean_text*
 
 
 # End of https://www.toptal.com/developers/gitignore/api/python
